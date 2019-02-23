@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import CardContainer from './CardContainer.js'
+import MockData from './mockData.js'
+
 import './styles/App.scss';
 
 class App extends Component {
@@ -7,18 +9,16 @@ class App extends Component {
     super();
     this.state = {
       player: true,
+      allCards: MockData.cards,
       allInventory: []
     }
   }
 
-  componentDidMount() {
-    fetch("http://whateverly-datasets.herokuapp.com/api/v1/distributor")
-      .then(response => response.json())
-      .then(supplier => {
-        this.setState({
-          allInventory: supplier.distributor[0].inventory
-        });
-      })
+  componentWillMount() {
+    // console.log('hello')
+    this.setState({
+      player: false
+    });
   }
 
   toggleCat = el => {
@@ -30,22 +30,23 @@ class App extends Component {
 
 
   render() {
+
+
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p onClick={this.toggleCat}>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+
         </header>
+
+        <main className="main-content">
+          <h1>Flash Cards</h1>
+          <CardContainer allCards={this.state.allCards} />
+          <button>Start</button>
+        </main>
+
+        <footer className="App-footer">
+          <p>&copy; 2019</p>
+        </footer>
       </div>
     );
   }

@@ -1,0 +1,394 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should match snapshot when all data is passed correctly 1`] = `
+<div
+  className="App"
+>
+  <header
+    className="App-header"
+  />
+  <main
+    className="main-content"
+  >
+    <h1>
+      Flash Cards
+    </h1>
+    <CardContainer
+      allCards={
+        Array [
+          Object {
+            "answers": Array [
+              "Home Tool Markup Language",
+              "Hyperlinks and Text Markup Language",
+              "Hyper Text Material Language",
+              "Hyper Text Markup Language",
+            ],
+            "category": "html",
+            "correctAnswer": "Hyper Text Markup Language",
+            "id": 101,
+            "question": "What does HTML stand for?",
+          },
+          Object {
+            "answers": Array [
+              "<*-- A SAMPLE COMMENT --*>",
+              "<?-- A SAMPLE COMMENT -->",
+              "<!-- A SAMPLE COMMENT -->",
+              "<-- A SAMPLE COMMENT --!>",
+            ],
+            "category": "html",
+            "correctAnswer": "<!-- A SAMPLE COMMENT -->",
+            "id": 102,
+            "question": "How do you insert a comment in HTML?",
+          },
+          Object {
+            "answers": Array [
+              "&copy;",
+              "&copyRight;",
+              "&copy!",
+              "&copySymbol;",
+            ],
+            "category": "html",
+            "correctAnswer": "&copy;",
+            "id": 103,
+            "question": "How do you insert a copyright symbol on a browser page?",
+          },
+          Object {
+            "answers": Array [
+              "Miscrosoft",
+              "Firefox",
+              "The World Wide Web Consortium",
+              "Internet Explorer",
+            ],
+            "category": "html",
+            "correctAnswer": "The World Wide Web Consortium",
+            "id": 104,
+            "question": "Who is making the Web standards?",
+          },
+          Object {
+            "answers": Array [
+              "<h1>",
+              "<h4>",
+              "<head>",
+              "<header>",
+            ],
+            "category": "html",
+            "correctAnswer": "<h1>",
+            "id": 105,
+            "question": "What is the largest HTML element heading tag?",
+          },
+          Object {
+            "answers": Array [
+              "<a url='http://www.w3schools.com'>google.com</a>",
+              "<a link='http://www.w3schools.com'>google.com</a>",
+              "<a script='http://www.w3schools.com'>google.com</a>",
+              "<a href='http://www.w3schools.com'>google.com</a>",
+            ],
+            "category": "html",
+            "correctAnswer": "<a href='http://www.w3schools.com'>google.com</a>",
+            "id": 106,
+            "question": "How do you create an anchor tag that creates a hyperlink?",
+          },
+          Object {
+            "answers": Array [
+              "target=\\"_blank\\"",
+              "newTab=\\"_blank\\"",
+              "tab=\\"_new\\"",
+              "target=\\"_tab\\"",
+            ],
+            "category": "html",
+            "correctAnswer": "target=\\"_blank\\"",
+            "id": 107,
+            "question": "Which HTML attribute can open a new tab in a browser?",
+          },
+          Object {
+            "answers": Array [
+              "<ul>",
+              "<li>",
+              "<ol>",
+              "<order>",
+            ],
+            "category": "html",
+            "correctAnswer": "<ol>",
+            "id": 108,
+            "question": "Which element makes a numbered list?",
+          },
+          Object {
+            "answers": Array [
+              "<img src=\\"image.jpg\\">",
+              "<img link=\\"image.jpg\\">",
+              "<image src=\\"image.jpg\\">",
+              "<image link=\\"image.jpg\\">",
+            ],
+            "category": "html",
+            "correctAnswer": "<img src=\\"image.jpg\\">",
+            "id": 109,
+            "question": "What is the correct HTML for inserting an image?",
+          },
+          Object {
+            "answers": Array [
+              "<header>",
+              "<title>",
+              "<head>",
+              "<section>",
+            ],
+            "category": "html",
+            "correctAnswer": "<title>",
+            "id": 110,
+            "question": "Which HTML element defines the title of a document?",
+          },
+          Object {
+            "answers": Array [
+              "Computer Style Sheets",
+              "Creative Style Sheets",
+              "Cascading Stylist Sheets",
+              "Cascading Style Sheets",
+            ],
+            "category": "css",
+            "correctAnswer": "Cascading Style Sheets",
+            "id": 201,
+            "question": "What does CSS stand for?",
+          },
+          Object {
+            "answers": Array [
+              "<footer>",
+              "<head>",
+              "<body>",
+              "<section>",
+            ],
+            "category": "css",
+            "correctAnswer": "<head>",
+            "id": 202,
+            "question": "Which tag is the correct place to refer to an external style sheet?",
+          },
+          Object {
+            "answers": Array [
+              "<css>",
+              "<script>",
+              "<head>",
+              "<style>",
+            ],
+            "category": "css",
+            "correctAnswer": "<style>",
+            "id": 203,
+            "question": "Which HTML tag is used to define an internal style sheet?",
+          },
+          Object {
+            "answers": Array [
+              "body:color=black;",
+              "{body;color:black;}",
+              "body{color: black;}",
+              "{body:color=black;}",
+            ],
+            "category": "css",
+            "correctAnswer": "body{color: black;}",
+            "id": 204,
+            "question": "Which is the correct CSS syntax?",
+          },
+          Object {
+            "answers": Array [
+              "// this is a comment",
+              "*this is a comment*",
+              "/* this is a comment */",
+              "// this is a comment //",
+            ],
+            "category": "css",
+            "correctAnswer": "/* this is a comment */",
+            "id": 205,
+            "question": "How do you insert a comment in a CSS file?",
+          },
+          Object {
+            "answers": Array [
+              "background-color",
+              "color",
+              "bgcolor",
+              "back-color",
+            ],
+            "category": "css",
+            "correctAnswer": "background-color",
+            "id": 206,
+            "question": "Which property is used to change the background color?",
+          },
+          Object {
+            "answers": Array [
+              "fgcolor",
+              "color",
+              "text-color",
+              "background-text",
+            ],
+            "category": "css",
+            "correctAnswer": "color",
+            "id": 207,
+            "question": "Which CSS property is used to change the text color of an element?",
+          },
+          Object {
+            "answers": Array [
+              "text-style",
+              "text-size",
+              "font-size",
+              "font-style",
+            ],
+            "category": "css",
+            "correctAnswer": "font-size",
+            "id": 208,
+            "question": "Which CSS property controls the text size?",
+          },
+          Object {
+            "answers": Array [
+              "a {text-decoration:no-underline;}",
+              "a {text-decoration:none;}",
+              "a {decoration:no-underline;}",
+              "a {underline:none;}",
+            ],
+            "category": "css",
+            "correctAnswer": "a {text-decoration:none;}",
+            "id": 209,
+            "question": "How do you display hyperlinks without an underline?",
+          },
+          Object {
+            "answers": Array [
+              "font-weight",
+              "font-family",
+              "font-style",
+              "font-text",
+            ],
+            "category": "css",
+            "correctAnswer": "font-weight",
+            "id": 210,
+            "question": "Which property is used to change the font of an element?",
+          },
+          Object {
+            "answers": Array [
+              "<script>",
+              "<javascript>",
+              "<html>",
+              "<css>",
+            ],
+            "category": "javascript",
+            "correctAnswer": "<script>",
+            "id": 301,
+            "question": "Inside which HTML element do we put JavaScript into?",
+          },
+          Object {
+            "answers": Array [
+              "msgBox(\\"Hello World\\");",
+              "alert(\\"Hello World\\");",
+              "console.log(\\"Hello World\\");",
+              "alertBox(\\"Hello World\\");",
+            ],
+            "category": "javascript",
+            "correctAnswer": "alert(\\"Hello World\\");",
+            "id": 302,
+            "question": "How do you write \\"Hello World\\" in an alert box?",
+          },
+          Object {
+            "answers": Array [
+              "function = myFunction()",
+              "function:myFunction()",
+              "function myFunction()",
+              "function()",
+            ],
+            "category": "javascript",
+            "correctAnswer": "function myFunction()",
+            "id": 303,
+            "question": "How do you create a function in JavaScript?",
+          },
+          Object {
+            "answers": Array [
+              "new exampleFunction()",
+              "run exampleFunction",
+              "exampleFunction",
+              "exampleFunction ()",
+            ],
+            "category": "javascript",
+            "correctAnswer": "exampleFunction()",
+            "id": 304,
+            "question": "How do you call a function named exampleFunction?",
+          },
+          Object {
+            "answers": Array [
+              "if (i == 5)",
+              "if i == 5 then",
+              "if i = 5 then",
+              "if i = 5",
+            ],
+            "category": "javascript",
+            "correctAnswer": "if (i == 5)",
+            "id": 305,
+            "question": "How to write an IF statement in JavaScript?",
+          },
+          Object {
+            "answers": Array [
+              "while (i <= 5; i++)",
+              "while (i = 0; i <= 5)",
+              "while i = 1 to 5",
+              "while (i <= 5)",
+            ],
+            "category": "javascript",
+            "correctAnswer": "while (i <= 5)",
+            "id": 306,
+            "question": "How does a WHILE loop start?",
+          },
+          Object {
+            "answers": Array [
+              "for (i <= 5; i++)",
+              "for i = 1 to 5",
+              "for (i = 0; i <= 5; i++)",
+              "for (i = 0; i <= 5)",
+            ],
+            "category": "javascript",
+            "correctAnswer": "for (i = 0; i <= 5; i++)",
+            "id": 307,
+            "question": "How does a FOR loop start?",
+          },
+          Object {
+            "answers": Array [
+              "'This is a comment",
+              "//This is a comment",
+              "/*This is a comment*/",
+              "<!--This is a comment-->",
+            ],
+            "category": "javascript",
+            "correctAnswer": "//This is a comment",
+            "id": 308,
+            "question": "How can you add a comment in a JavaScript?",
+          },
+          Object {
+            "answers": Array [
+              "onhover",
+              "onclick",
+              "onmouseover",
+              "event",
+            ],
+            "category": "javascript",
+            "correctAnswer": "onclick",
+            "id": 309,
+            "question": "Which event occurs when the user clicks on an HTML element?",
+          },
+          Object {
+            "answers": Array [
+              "v exampleVar",
+              "variable exampleVar",
+              "var exampleVar",
+              "new exampleVar",
+            ],
+            "category": "javascript",
+            "correctAnswer": "var exampleVar",
+            "id": 310,
+            "question": "How do you declare a JavaScript variable?",
+          },
+        ]
+      }
+    />
+    <button>
+      Start
+    </button>
+  </main>
+  <footer
+    className="App-footer"
+  >
+    <p>
+      © 2019
+    </p>
+  </footer>
+</div>
+`;
