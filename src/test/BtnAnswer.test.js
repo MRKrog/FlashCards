@@ -4,13 +4,15 @@ import MockData from '../mockData';
 import { shallow } from "enzyme";
 
 const cards = MockData.cards;
+const answers = MockData.cards.answers;
+
 
 describe("Answer Button", () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(
-      <BtnAnswer />
+      <BtnAnswer answers={answers} />
     );
   });
 
