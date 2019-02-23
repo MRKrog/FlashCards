@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
 import Card from './Card.js'
 
+import './styles/CardContainer.scss';
+
 class CardContainer extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const cards = this.props.allCards;
-
-    const cardList = cards.map((card) =>
-      <Card singleCard={card} key={card.id}/>
-    )
+    const currentCard = this.props.currentCard;
 
     return (
-      <div>{cardList}</div>
+      <section className="CardContainer">
+        <Card key={currentCard.id}
+              currentCard={currentCard}
+              onChangeCard={this.props.onChangeCard}
+
+        />
+      </section>
     )
   }
 

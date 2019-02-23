@@ -1,0 +1,33 @@
+$font-title: 'Abel', sans-serif;
+$font-header: 'Rajdhani', sans-serif;
+$font-copy: 'Lato', sans-serif;
+
+$white: #fff;
+$black: #231f20;
+$dark-blue: #11212a;
+
+
+.BtnAnswer {
+  display: inline-block;
+  width: 48%;
+  padding: 1%;
+
+    button {
+      width: 100%;
+      font-family: $font-title;
+      transition: all .5s ease;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      padding: .4em;
+      cursor: pointer;
+      background: #1f93ec;
+      color: #fff;
+      outline: none;
+
+      &:hover {
+        background:#000;
+        color: #231f20;
+      }
+    }
+}

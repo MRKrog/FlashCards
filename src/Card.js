@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import BtnAnswer from './BtnAnswer.js'
 
+import './styles/Card.scss';
+
 class Card extends Component {
   constructor(props) {
     super(props);
@@ -10,20 +12,27 @@ class Card extends Component {
   }
 
   render() {
-    const answerArray = this.props.singleCard.answers;
+    const answerArray = this.props.currentCard.answers;
+    const cardQuestion = this.props.currentCard.question;
 
     const cardAnswers = answerArray.map((answer) =>
-        <BtnAnswer answer={answer} key={answer} />
-    )
+        <BtnAnswer key={answer}
+                   answer={answer}
+                   onChangeCard={this.props.onChangeCard}
+        />
+    );
 
     return (
-      <div>
-        <h3>{this.props.singleCard.question}</h3>
-        <ul>{cardAnswers}</ul>
-      </div>
+      <article className="Card">
+        <section className="Card-question">
+          <h3>{cardQuestion}</h3>
+        </section>
+        <section className="Card-answers">
+          {cardAnswers}
+        </section>
+      </article>
     )
   }
-
 }
 
 

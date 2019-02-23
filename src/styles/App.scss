@@ -4,7 +4,7 @@
 // Segoe UI", "Roboto", "Oxygen",
   // "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
 
-$font-title: 'Fjalla One', sans-serif;
+$font-title: 'Abel', sans-serif;
 $font-header: 'Rajdhani', sans-serif;
 $font-copy: 'Lato', sans-serif;
 
@@ -34,25 +34,30 @@ $dark-blue: #11212a;
   }
 
   .App-header {
-    background-color: rgba(255, 255, 255, .4);
+    background-color: #231f20;
     display: block;
     width: 100%;
-    height: 10px;
     z-index: 10;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .8);
+
+    h1 {
+      font-family: $font-title;
+      color: #4c4c4c;
+      text-transform: uppercase;
+      font-size: 2em;
+      letter-spacing: .1em;
+      text-align: center;
+      margin: 0;
+      padding: .2em;
+      line-height: 1;
+      font-weight: 100;
+    }
+
   }
 
   .main-content {
-    padding: 2em;
+    width: 100%;
     z-index: 10;
-
-    h1 {
-      font-family: $font-header;
-      color: $white;
-      text-transform: uppercase;
-      font-size: 3.5em;
-      letter-spacing: .01em;
-      text-align: center;
-    }
   }
 
   .App-footer {
@@ -60,11 +65,13 @@ $dark-blue: #11212a;
     display: block;
     width: 100%;
     z-index: 10;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .8);
 
     p {
       margin: 0;
       text-align: center;
-      color: $white;
+      color: #4c4c4c;
+      font-family: $font-title;
       padding: .5em
     }
   }
