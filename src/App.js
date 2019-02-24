@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MockData from './mockData.js';
 
 import Header from './Header.js';
-import WelcomeBtn from './WelcomeBtn.js';
+import WelcomeScreen from './WelcomeScreen.js';
 import CardContainer from './CardContainer.js';
 import Footer from './Footer.js';
 
@@ -31,19 +31,16 @@ class App extends Component {
   }
 
   removeCorrectCards() {
-    const { allCards, currCardIndex, correctCards } = this.state;
+    const { allCards, correctCards } = this.state;
     correctCards.forEach((correctCard) => {
-      let foundCard = allCards.find(function(card) {
-        return card.id === correctCard.id;
-      });
+      let foundCard = allCards.find(card => card.id === correctCard.id);
       let cardIndex = allCards.indexOf(foundCard);
       allCards.splice(cardIndex, 1);
     });
   }
 
-
   handleChangeCard = (clickedAnswer) => {
-    const { allCards, currCardIndex, correctCards } = this.state;
+    const { allCards } = this.state;
     const currentCard = allCards[this.state.currCardIndex];
     let currIndex = this.state.currCardIndex;
 
@@ -68,15 +65,17 @@ class App extends Component {
   }
 
   render() {
-    const { allCards, currCardIndex, correctCards, localStorageExist } = this.state;
+    const { allCards, currCardIndex, localStorageExist } = this.state;
 
     let displayContent;
 
     if(this.state.currentPlayer === false) {
       this.removeCorrectCards();
-      displayContent = <WelcomeBtn localStorageExist={localStorageExist} startQuiz={this.startQuiz} />
+      displayContent = <WelcomeScreen localStorageExist={localStorageExist}
+                                   startQuiz={this.startQuiz} />
     } else {
-      displayContent = <CardContainer currentCard={allCards[currCardIndex]} onChangeCard={this.handleChangeCard} />
+      displayContent = <CardContainer currentCard={allCards[currCardIndex]}
+                                      onChangeCard={this.handleChangeCard} />
     }
 
     return (
