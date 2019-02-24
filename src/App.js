@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
-import CardContainer from './CardContainer.js'
 import MockData from './mockData.js'
+
+import Header from './Header.js'
+import CardContainer from './CardContainer.js';
+import Footer from './Footer.js'
 
 import './styles/App.scss';
 
@@ -8,79 +11,108 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      player: true,
+      currentPlayer: false,
       allCards: MockData.cards,
       correctCards: [],
-      wrongCards: [],
-      currCardIndex: 0
+      currCardIndex: 0,
+      localStorageExist: false
     }
   }
 
   componentWillMount() {
-    // console.log('hello')
-    // this.setState({
-    //   player: false
-    // });
+    if(localStorage.length > 0){
+      const correctArray = JSON.parse(localStorage.getItem('correctQuestions'));
+      console.log(correctArray);
+      this.setState({
+        correctCards: correctArray,
+        localStorageExist: true
+      });
+    }
   }
 
-  toggleCat = el => {
-    alert('hello')
-    this.setState({
-      player: false
+  removeCorrectCards() {
+    const { allCards, currCardIndex, correctCards } = this.state;
+    console.log('before ', allCards);
+    console.log('correctArray ', this.state);
+    this.state.correctCards.forEach((correct) => {
+      console.log(correct);
+      let found = allCards.find(function(element) {
+        return element.id === correct.id;
+      });
+
+      let cardIndex = allCards.indexOf(found);
+      allCards.splice(cardIndex, 1);
     });
-  };
+    console.log('after ', allCards);
+  }
+
 
   handleChangeCard = (clickedAnswer) => {
-    const currentCard = this.state.allCards[this.state.currCardIndex];
+    const { allCards, currCardIndex, correctCards } = this.state;
+    const currentCard = allCards[this.state.currCardIndex];
     let currIndex = this.state.currCardIndex;
+
     if(currentCard.correctAnswer === clickedAnswer){
-      this.state.correctCards.push(currentCard)
-    } else {
-      this.state.wrongCards.push(currentCard)
+      this.state.correctCards.push(currentCard);
+      localStorage.setItem('correctQuestions', JSON.stringify(this.state.correctCards));
     }
     currIndex++;
-    this.changeIndex(currIndex)
+    this.changeIndex(currIndex);
   }
 
   changeIndex = (currIndex) => {
-    console.log('current index', currIndex);
     this.setState({
       currCardIndex: currIndex
+    });
+  }
+
+  startGame = () => {
+    this.setState({
+      currentPlayer: true
     })
   }
 
-
-
-
   render() {
-    const allCards = this.state.allCards;
-    const currCardIndex = this.state.currCardIndex;
-    const correctCards = this.state.correctCards;
-    const wrongCards = this.state.wrongCards;
+    const { allCards, currCardIndex, correctCards } = this.state;
 
-    console.log('current state ', this.state);
-    console.log('currCard ', allCards[currCardIndex]);
-      // <button>Start</button>
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1>Flash Cards</h1>
-        </header>
 
-        <main className="main-content">
+    if(this.state.currentPlayer === false){
+      this.removeCorrectCards();
+      const displayCard = <CardContainer key={currCardIndex}
+                                         currentCard={allCards[currCardIndex]}
+                                         onChangeCard={this.handleChangeCard}
+                                        />
 
-          <CardContainer key={currCardIndex}
-                         currentCard={allCards[currCardIndex]}
-                         onChangeCard={this.handleChangeCard}
-          />
+      return (
+        <div className="App">
+          <Header />
 
-        </main>
+          <main className="main-content">
+            <button onClick={this.startGame}>Start Game</button>
+          </main>
 
-        <footer className="App-footer">
-          <p>&copy; 2019</p>
-        </footer>
-      </div>
-    );
+          <Footer />
+        </div>
+      );
+    } else {
+      const displayCard = <CardContainer key={currCardIndex}
+                                         currentCard={allCards[currCardIndex]}
+                                         onChangeCard={this.handleChangeCard}
+                                        />
+
+      return (
+        <div className="App">
+          <Header />
+
+          <main className="main-content">
+            {displayCard}
+          </main>
+
+          <Footer />
+        </div>
+      );
+    }
+
   }
 
 }
