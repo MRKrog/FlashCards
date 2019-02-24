@@ -58,6 +58,23 @@ $dark-blue: #11212a;
   .main-content {
     width: 100%;
     z-index: 10;
+
+    .welcome-btn {
+      width: 100%;
+      display: block;
+      margin: auto;
+      max-width: 200px;
+      font-family: "Lato", sans-serif;
+      transition: all .5s ease;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      padding: .4em;
+      cursor: pointer;
+      background: #1f93ec;
+      color: #fff;
+      outline: none;
+    }
   }
 
   .App-footer {

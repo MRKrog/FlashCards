@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import MockData from './mockData.js'
+import MockData from './mockData.js';
 
-import Header from './Header.js'
+import Header from './Header.js';
+import WelcomeBtn from './WelcomeBtn.js';
 import CardContainer from './CardContainer.js';
-import Footer from './Footer.js'
+import Footer from './Footer.js';
 
 import './styles/App.scss';
 
@@ -22,7 +23,6 @@ class App extends Component {
   componentWillMount() {
     if(localStorage.length > 0){
       const correctArray = JSON.parse(localStorage.getItem('correctQuestions'));
-      console.log(correctArray);
       this.setState({
         correctCards: correctArray,
         localStorageExist: true
@@ -32,18 +32,13 @@ class App extends Component {
 
   removeCorrectCards() {
     const { allCards, currCardIndex, correctCards } = this.state;
-    console.log('before ', allCards);
-    console.log('correctArray ', this.state);
-    this.state.correctCards.forEach((correct) => {
-      console.log(correct);
-      let found = allCards.find(function(element) {
-        return element.id === correct.id;
+    correctCards.forEach((correctCard) => {
+      let foundCard = allCards.find(function(card) {
+        return card.id === correctCard.id;
       });
-
-      let cardIndex = allCards.indexOf(found);
+      let cardIndex = allCards.indexOf(foundCard);
       allCards.splice(cardIndex, 1);
     });
-    console.log('after ', allCards);
   }
 
 
@@ -57,64 +52,43 @@ class App extends Component {
       localStorage.setItem('correctQuestions', JSON.stringify(this.state.correctCards));
     }
     currIndex++;
-    this.changeIndex(currIndex);
+    this.changeCardIndex(currIndex);
   }
 
-  changeIndex = (currIndex) => {
+  changeCardIndex = (currIndex) => {
     this.setState({
       currCardIndex: currIndex
     });
   }
 
-  startGame = () => {
+  startQuiz = () => {
     this.setState({
       currentPlayer: true
     })
   }
 
   render() {
-    const { allCards, currCardIndex, correctCards } = this.state;
+    const { allCards, currCardIndex, correctCards, localStorageExist } = this.state;
 
+    let displayContent;
 
-    if(this.state.currentPlayer === false){
+    if(this.state.currentPlayer === false) {
       this.removeCorrectCards();
-      const displayCard = <CardContainer key={currCardIndex}
-                                         currentCard={allCards[currCardIndex]}
-                                         onChangeCard={this.handleChangeCard}
-                                        />
-
-      return (
-        <div className="App">
-          <Header />
-
-          <main className="main-content">
-            <button onClick={this.startGame}>Start Game</button>
-          </main>
-
-          <Footer />
-        </div>
-      );
+      displayContent = <WelcomeBtn localStorageExist={localStorageExist} startQuiz={this.startQuiz} />
     } else {
-      const displayCard = <CardContainer key={currCardIndex}
-                                         currentCard={allCards[currCardIndex]}
-                                         onChangeCard={this.handleChangeCard}
-                                        />
-
-      return (
-        <div className="App">
-          <Header />
-
-          <main className="main-content">
-            {displayCard}
-          </main>
-
-          <Footer />
-        </div>
-      );
+      displayContent = <CardContainer currentCard={allCards[currCardIndex]} onChangeCard={this.handleChangeCard} />
     }
 
+    return (
+      <div className="App">
+        <Header />
+        <main className="main-content">
+          {displayContent}
+        </main>
+        <Footer />
+      </div>
+    )
   }
-
 }
 
 export default App;

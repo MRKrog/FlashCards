@@ -261,7 +261,7 @@ const cards = [
       "new exampleFunction()",
       "run exampleFunction",
       "exampleFunction",
-      "exampleFunction ()"]
+      "exampleFunction()"]
     },
     {
       "id": 305,
