@@ -8,7 +8,7 @@ class BtnAnswer extends Component {
   }
 
   handleChangeCard = () => {
-    this.props.onChangeCard(this.props.answer)
+    this.props.onChangeCard(this.props.answer);
   }
 
   render() {
