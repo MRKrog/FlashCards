@@ -6,9 +6,6 @@ import './styles/Card.scss';
 class Card extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      correct: false
-    }
   }
 
   render() {

@@ -42,7 +42,7 @@ $purpleBtn: #723bd7;
 
     h1 {
       font-family: $font-header;
-      color: $lightWhite;
+      color: #bdb753;
       text-transform: uppercase;
       font-size: 1.5em;
       letter-spacing: .1em;
@@ -55,13 +55,13 @@ $purpleBtn: #723bd7;
       font-family: $font-header;
       text-transform: uppercase;
       letter-spacing: .05em;
-      color: #fff;
+      color: #535667;
       font-weight: 100;
       line-height: 1;
+    }
 
-      span {
-        font-weight: bold;
-      }
+    i {
+      opacity: .4
     }
 
   }

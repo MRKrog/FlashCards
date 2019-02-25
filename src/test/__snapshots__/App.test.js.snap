@@ -1,44 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App should match snapshot when all data is passed correctly 1`] = `
+exports[`<App> should match snapshot when all data is passed correctly 1`] = `
 <div
   className="App"
 >
-  <header
-    className="App-header"
+  <Header
+    correctCards={Array []}
   />
   <main
     className="main-content"
   >
-    <h1>
-      Flash Cards
-    </h1>
-    <CardContainer
-      currentCard={
-        Object {
-          "answers": Array [
-            "Home Tool Markup Language",
-            "Hyperlinks and Text Markup Language",
-            "Hyper Text Material Language",
-            "Hyper Text Markup Language",
-          ],
-          "category": "html",
-          "correctAnswer": "Hyper Text Markup Language",
-          "id": 101,
-          "question": "What does HTML stand for?",
-        }
-      }
+    <WelcomeScreen
+      localStorageExist={false}
+      startQuiz={[Function]}
     />
-    <button>
-      Start
-    </button>
   </main>
-  <footer
-    className="App-footer"
-  >
-    <p>
-      © 2019
-    </p>
-  </footer>
+  <Footer />
 </div>
 `;

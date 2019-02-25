@@ -13,12 +13,11 @@ class BtnAnswer extends Component {
 
   render() {
     const cardAnswer = this.props.answer;
-
-      return (
-        <div className="BtnAnswer">
-          <button onClick={this.handleChangeCard}>{cardAnswer}</button>
-        </div>
-      )
+    return (
+      <div className="BtnAnswer">
+        <button onClick={this.handleChangeCard}>{cardAnswer}</button>
+      </div>
+    )
   }
 }
 

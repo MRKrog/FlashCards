@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Answer Button should match snapshot when all data is passed correctly 1`] = `
+<div
+  className="BtnAnswer"
+>
+  <button
+    onClick={[Function]}
+  >
+    Hyper Text Markup Language
+  </button>
+</div>
+`;

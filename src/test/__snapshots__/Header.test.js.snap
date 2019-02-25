@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should match snapshot when all data is passed correctly 1`] = `
+<header
+  className="App-header"
+>
+  <h1>
+    <i
+      className="far fa-window-restore"
+    />
+     Flash Cards
+  </h1>
+  <h4>
+    Correct Cards: 
+    <span>
+      1
+      /30
+    </span>
+  </h4>
+</header>
+`;
