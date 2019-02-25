@@ -1,3 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CardContainer should match snapshot when all data is passed correctly 1`] = `undefined`;
+exports[`CardContainer should match snapshot when all data is passed correctly 1`] = `
+<section
+  className="CardContainer"
+>
+  <Card
+    currentCard={
+      Object {
+        "answers": Array [
+          "Home Tool Markup Language",
+          "Hyperlinks and Text Markup Language",
+          "Hyper Text Material Language",
+          "Hyper Text Markup Language",
+        ],
+        "category": "html",
+        "correctAnswer": "Hyper Text Markup Language",
+        "id": 101,
+        "question": "What does HTML stand for?",
+      }
+    }
+    key="101"
+    onChangeCard={[MockFunction]}
+  />
+</section>
+`;

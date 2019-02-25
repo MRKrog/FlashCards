@@ -80,7 +80,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Header />
+        <Header correctCards={this.state.correctCards}/>
         <main className="main-content">
           {displayContent}
         </main>

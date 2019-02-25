@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should match snapshot when all data is passed correctly 1`] = `
+<footer
+  className="App-footer"
+>
+  <p>
+    © 2019
+  </p>
+</footer>
+`;

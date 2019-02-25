@@ -10,17 +10,13 @@ $dark-blue: #11212a;
 $purpleBtn: #723bd7;
 
 .Card {
-  max-width: 600px;
+  max-width: 700px;
   width: 100%;
   display: flex;
   flex-direction: column;
   margin: auto;
 
   .Card-question {
-    background:url(beach_cont.jpg);
-    background-position: bottom;
-    background-size: cover;
-    background-repeat: no-repeat;
     position: relative;
     box-shadow: 0px 11px 37px rgba(35, 31, 32, 0.5);
     border-radius: 3em;
@@ -34,7 +30,7 @@ $purpleBtn: #723bd7;
       height: 100%;
       z-index: 8;
       background: rgba(255,255,255,0.7);
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(246, 246, 246, 0.15) 33%, rgba(237, 237, 237, 0.3) 100%)
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, rgba(246, 246, 246, 0.5) 33%, rgba(237, 237, 237, 0.3) 100%)
     }
 
     h3 {
@@ -43,7 +39,7 @@ $purpleBtn: #723bd7;
       font-weight: 300;
       color: #535667;
       line-height: 1.3;
-      padding: .8em;
+      padding: .4em 1.2em;
       margin: 0;
       text-align: left;
       position: relative;
