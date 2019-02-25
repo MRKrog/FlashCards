@@ -15,6 +15,9 @@ exports[`<App> should match snapshot when all data is passed correctly 1`] = `
       startQuiz={[Function]}
     />
   </main>
-  <Footer />
+  <Footer
+    currentPlayer={false}
+    resetQuiz={[Function]}
+  />
 </div>
 `;

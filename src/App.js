@@ -59,8 +59,17 @@ class App extends Component {
   }
 
   startQuiz = () => {
+
     this.setState({
-      currentPlayer: true
+      currentPlayer: true,
+    })
+  }
+
+  resetQuiz = () => {
+    localStorage.clear();
+    this.setState({
+      currentPlayer: false,
+      localStorageExist: false
     })
   }
 
@@ -72,7 +81,7 @@ class App extends Component {
     if(this.state.currentPlayer === false) {
       this.removeCorrectCards();
       displayContent = <WelcomeScreen localStorageExist={localStorageExist}
-                                   startQuiz={this.startQuiz} />
+                                      startQuiz={this.startQuiz} />
     } else {
       displayContent = <CardContainer currentCard={allCards[currCardIndex]}
                                       onChangeCard={this.handleChangeCard} />
@@ -84,7 +93,9 @@ class App extends Component {
         <main className="main-content">
           {displayContent}
         </main>
-        <Footer />
+        <Footer resetQuiz={this.resetQuiz}
+                currentPlayer={this.state.currentPlayer}
+              />
       </div>
     )
   }
