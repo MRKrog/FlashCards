@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import MockData from './mockData.js';
 
 import Header from './Header.js';
 import WelcomeScreen from './WelcomeScreen.js';
