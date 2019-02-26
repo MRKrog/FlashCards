@@ -17,7 +17,8 @@ class App extends Component {
       allCards: [],
       correctCards: [],
       currCardIndex: 0,
-      localStorageExist: false
+      localStorageExist: false,
+      cardsLeft: 0
     }
   }
 

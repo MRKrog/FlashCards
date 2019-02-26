@@ -28,13 +28,15 @@ describe("<App>", () => {
     wrapper = shallow(
       <App />
     );
+
     wrapper.setState({
       currentPlayer: false,
       originCards: [],
       allCards: mockData,
       correctCards: [],
       currCardIndex: 0,
-      localStorageExist: false
+      localStorageExist: false,
+      cardsLeft: 0
     })
   });
 
