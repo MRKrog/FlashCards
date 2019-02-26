@@ -1,7 +1,6 @@
 import React from "react";
 import WelcomeScreen from "../WelcomeScreen";
 import App from "../App";
-import MockData from '../mockData';
 import { shallow } from "enzyme";
 
 const startQuiz = jest.fn();

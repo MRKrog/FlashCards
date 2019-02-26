@@ -1,13 +1,5 @@
-$font-title: 'Abel', sans-serif;
-$font-copy: 'Lato', sans-serif;
 $font-header: 'Barlow', sans-serif;
-
-$white: #fff;
-$lightWhite: #d6d6d6;
-$black: #231f20;
-$dark-blue: #11212a;
-
-$purpleBtn: #723bd7;
+$copyGray: #535667;
 
 .WelcomeScreen {
   max-width: 600px;
@@ -30,13 +22,7 @@ $purpleBtn: #723bd7;
       height: 100%;
       z-index: 8;
       background: rgba(255,255,255,0.7);
-      background: -moz-linear-gradient(-45deg, rgba(255,255,255,0.7) 0%, rgba(246,246,246,0.65) 47%, rgba(237,237,237,0.83) 100%);
-      background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,255,255,0.7)), color-stop(47%, rgba(246,246,246,0.65)), color-stop(100%, rgba(237,237,237,0.83)));
-      background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0.7) 0%, rgba(246,246,246,0.65) 47%, rgba(237,237,237,0.83) 100%);
-      background: -o-linear-gradient(-45deg, rgba(255,255,255,0.7) 0%, rgba(246,246,246,0.65) 47%, rgba(237,237,237,0.83) 100%);
-      background: -ms-linear-gradient(-45deg, rgba(255,255,255,0.7) 0%, rgba(246,246,246,0.65) 47%, rgba(237,237,237,0.83) 100%);
       background: linear-gradient(135deg, rgba(255,255,255,0.7) 0%, rgba(246,246,246,0.65) 47%, rgba(237,237,237,0.83) 100%);
-      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
     }
 
     .welcome-content {
@@ -46,7 +32,7 @@ $purpleBtn: #723bd7;
 
       .welcome-subHeader {
         font-family: $font-header;
-        color: #535667;
+        color: $copyGray;
         line-height: 1;
         font-weight: 400;
       }
@@ -54,14 +40,14 @@ $purpleBtn: #723bd7;
         font-family: $font-header;
         font-size: 2em;
         font-weight: 300;
-        color: #535667;
+        color: $copyGray;
         line-height: 1;
         padding: .15em 0 .3em 0;
         margin: 0;
       }
       p {
         font-family: $font-header;
-        color: #535667;
+        color: $copyGray;
         font-size: 1.1em;
         margin: 0;
         line-height: 1.5;
@@ -95,8 +81,5 @@ $purpleBtn: #723bd7;
         }
       }
     }
-
-
-
   }
 }

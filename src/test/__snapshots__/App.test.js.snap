@@ -21,3 +21,24 @@ exports[`<App> should match snapshot when all data is passed correctly 1`] = `
   />
 </div>
 `;
+
+exports[`<App> should match the snapshot where CardContainer is rendered 1`] = `
+<div
+  className="App"
+>
+  <Header
+    correctCards={Array []}
+  />
+  <main
+    className="main-content"
+  >
+    <CardContainer
+      onChangeCard={[Function]}
+    />
+  </main>
+  <Footer
+    currentPlayer={true}
+    resetQuiz={[Function]}
+  />
+</div>
+`;

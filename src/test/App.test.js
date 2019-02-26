@@ -30,6 +30,7 @@ describe("<App>", () => {
     );
     wrapper.setState({
       currentPlayer: false,
+      originCards: [],
       allCards: mockData,
       correctCards: [],
       currCardIndex: 0,
@@ -44,6 +45,7 @@ describe("<App>", () => {
   it("should have the following default state", () => {
     expect(wrapper.state()).toEqual({
       currentPlayer: false,
+      originCards: [],
       allCards: mockData,
       correctCards: [],
       currCardIndex: 0,
@@ -79,32 +81,14 @@ describe("<App>", () => {
     expect(wrapper.instance().changeCardIndex).toHaveBeenCalled();
   });
 
-  it("should run remove correct card", () => {
-    const allCards = mockData;
-    const correctCards = [
-      {
-        "id": 101,
-        "category": "html",
-        "question": "What does HTML stand for?",
-        "correctAnswer": "Hyper Text Markup Language",
-        "answers": [
-        "Home Tool Markup Language",
-        "Hyperlinks and Text Markup Language",
-        "Hyper Text Material Language",
-        "Hyper Text Markup Language"]
-      },
-      {
-        "id": 102,
-        "category": "html",
-        "question": "How do you insert a comment in HTML?",
-        "correctAnswer": "<!-- A SAMPLE COMMENT -->",
-        "answers": [
-        "<*-- A SAMPLE COMMENT --*>",
-        "<?-- A SAMPLE COMMENT -->",
-        "<!-- A SAMPLE COMMENT -->",
-        "<-- A SAMPLE COMMENT --!>"]
-      }
-    ];
+  it("should match the snapshot where CardContainer is rendered", () => {
+    const newWrapper = shallow(<App />)
+    newWrapper.instance().startQuiz();
+    expect(newWrapper.state("currentPlayer")).toEqual(true);
+
+
+    expect(newWrapper).toMatchSnapshot();
+
 
   });
 

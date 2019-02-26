@@ -6,11 +6,13 @@ import './styles/CardContainer.scss';
 class CardContainer extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+
+    }
   }
 
   render() {
-    const currentCard = this.props.currentCard;
-
+    const { currentCard } = this.props;
     return (
       <section className="CardContainer">
         <Card key={currentCard.id}
@@ -23,6 +25,5 @@ class CardContainer extends Component {
   }
 
 }
-
 
 export default CardContainer;
