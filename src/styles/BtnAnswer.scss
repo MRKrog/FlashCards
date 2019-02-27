@@ -31,5 +31,13 @@ $purpleBtn: #723bd7;
       &:hover {
         opacity: .8;
       }
+
+      @media only screen and (max-width: 500px) {
+        font-size: .8em;
+      }
+
+      @media only screen and (max-width: 350px) {
+        font-size: .7em;
+      }
     }
 }

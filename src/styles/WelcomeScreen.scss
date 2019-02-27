@@ -80,6 +80,21 @@ $copyGray: #535667;
           opacity: .8;
         }
       }
+
+      @media only screen and (max-width: 500px) {
+        padding: 3em 2em 7em 2em;
+
+        h2 {
+          font-size: 1.3em;
+          font-weight: 500;
+          padding: .3em 0 .3em 0;
+        }
+
+        p {
+          font-size: .8em;
+        }
+      }
+
     }
   }
 }

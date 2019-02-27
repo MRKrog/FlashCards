@@ -51,4 +51,14 @@ $purpleBtn: #723bd7;
     width: 100%;
   }
 
+  @media only screen and (max-width: 500px) {
+    .Card-question  {
+      h3 {
+        font-size: 1.2em;
+        padding: 1em;
+      }
+    }
+  }
+
+
 }

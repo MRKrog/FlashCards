@@ -1,8 +1,10 @@
-import React from "react";
-import CardContainer from "../CardContainer";
+import React from 'react';
+import FinalScreen from '../FinalScreen';
+import App from '../App';
 import { shallow } from "enzyme";
 
-const currentCard = {
+
+const correctCardsExample = {
       "id": 101,
       "category": "html",
       "question": "What does HTML stand for?",
@@ -13,22 +15,27 @@ const currentCard = {
       "Hyper Text Material Language",
       "Hyper Text Markup Language"]
     }
+const finalBtn = jest.fn();
 
-const onChangeCard = jest.fn();
+describe("<FinalScreen>", () => {
 
-describe("CardContainer", () => {
   let wrapper;
 
   beforeEach(() => {
     wrapper = shallow(
-      <CardContainer currentCard={currentCard}
-                     onChangeCard={onChangeCard}
-                    />
+      <FinalScreen correctCards={correctCardsExample}
+                   finalBtn={finalBtn} />
     );
   });
 
   it("should match snapshot when all data is passed correctly", () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  it("should invoke the resetQuiz method when button is clicked", () => {
+    wrapper.find("button").simulate("click", { preventDefault: () => {} });
+    expect(finalBtn).toBeCalled();
+  });
+
 
 });

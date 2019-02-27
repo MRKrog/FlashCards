@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import Header from './Header.js';
 import WelcomeScreen from './WelcomeScreen.js';
+import FinalScreen from './FinalScreen.js';
 import CardContainer from './CardContainer.js';
 import Footer from './Footer.js';
 
@@ -16,8 +17,7 @@ class App extends Component {
       allCards: [],
       correctCards: [],
       currCardIndex: 0,
-      localStorageExist: false,
-      cardsLeft: 0
+      localStorageExist: false
     }
   }
 
@@ -26,7 +26,6 @@ class App extends Component {
     .then(response => response.json())
     .then(fetchCards => {
       this.setState({
-        originCards: fetchCards.mkCards,
         allCards: fetchCards.mkCards
       }, () => { this.getFromLocalStorage() });
     })
@@ -36,28 +35,27 @@ class App extends Component {
   }
 
   getFromLocalStorage = () => {
-    if(localStorage.length > 0){
-      const cardOrigins = this.state.allCards
-      const correctArray = JSON.parse(localStorage.getItem('correctQuestions'));
+      const [...cardOrigins] = this.state.allCards;
+      let correctArray;
+      let localStoreState;
+      // localStorage.length > 0 ? correctArray = JSON.parse(localStorage.getItem('correctQuestions')) : correctArray = []
+      if (localStorage.length > 0) {
+        correctArray = JSON.parse(localStorage.getItem('correctQuestions'));
+        localStoreState = true;
+      } else {
+        correctArray = [];
+        localStoreState = false;
+      }
+
       this.setState({
+        originCards: cardOrigins,
         correctCards: correctArray,
-        localStorageExist: true
-      }, () => { this.saveCardOrigins() });
-    }
-
-  }
-
-  saveCardOrigins = () => {
-    const originalCards = this.state.allCards;
-    this.setState({
-      originCards: originalCards
-    }, () => { this.removeCorrectCards() })
-
+        localStorageExist: localStoreState
+      }, () => { this.removeCorrectCards() });
   }
 
   removeCorrectCards = () => {
-    console.log('afe', this.state.originCards);
-    const { allCards, correctCards, originCards } = this.state;
+    const { allCards, correctCards } = this.state;
     correctCards.forEach((correctCard) => {
       let foundCard = allCards.find(card => card.id === correctCard.id);
       let cardIndex = allCards.indexOf(foundCard);
@@ -85,7 +83,7 @@ class App extends Component {
 
   startQuiz = () => {
     this.setState({
-      currentPlayer: true,
+      currentPlayer: true
     })
   }
 
@@ -94,16 +92,20 @@ class App extends Component {
     this.setState({
       currentPlayer: false,
       localStorageExist: false,
+      correctCards: [],
+      allCards: this.state.originCards,
+      currCardIndex: 0
     })
-
   }
 
   render() {
-    const { allCards, currCardIndex, localStorageExist } = this.state;
+    const { allCards, currCardIndex, localStorageExist, currentPlayer } = this.state;
 
     let displayContent;
-
-    if(this.state.currentPlayer === false) {
+    if(currCardIndex === allCards.length) {
+      displayContent = <FinalScreen correctCards={this.state.correctCards}
+                                    finalBtn={this.resetQuiz} />
+    } else if(currentPlayer === false) {
       displayContent = <WelcomeScreen localStorageExist={localStorageExist}
                                       startQuiz={this.startQuiz} />
     } else {
@@ -111,7 +113,6 @@ class App extends Component {
                                       onChangeCard={this.handleChangeCard} />
     }
 
-    console.log(this.state);
     return (
       <div className="App">
         <Header correctCards={this.state.correctCards}/>
