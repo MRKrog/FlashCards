@@ -8,9 +8,9 @@ Flash Cards Memoize is an app for aspiring developers to use in order to practic
 ### Screen Shots
 
 ![Start_Page](./src/images/Start_Capture.png)
-![Continue_Page](./src/images/Start_Capture.png)
-![Flash_Cards](./src/images/Start_Capture.png)
-![Final_Screen](./src/images/Start_Capture.png)
+![Continue_Page](./src/images/Continue_Capture.png)
+![Flash_Cards](./src/images/Flash_Capture.png)
+![Final_Screen](./src/images/Final_Capture.png)
 
 
 ### Setup
