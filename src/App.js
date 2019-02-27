@@ -38,7 +38,6 @@ class App extends Component {
       const [...cardOrigins] = this.state.allCards;
       let correctArray;
       let localStoreState;
-      // localStorage.length > 0 ? correctArray = JSON.parse(localStorage.getItem('correctQuestions')) : correctArray = []
       if (localStorage.length > 0) {
         correctArray = JSON.parse(localStorage.getItem('correctQuestions'));
         localStoreState = true;
@@ -46,7 +45,6 @@ class App extends Component {
         correctArray = [];
         localStoreState = false;
       }
-
       this.setState({
         originCards: cardOrigins,
         correctCards: correctArray,
