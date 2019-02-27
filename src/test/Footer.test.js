@@ -20,5 +20,26 @@ describe("Footer", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  
+
+  it("should match snapshot when props currentPlayer is equal to true and show the reset game btn", () => {
+    const truePlayer = true;
+    let wrapperContinue = shallow(
+      <Footer resetQuiz={resetQuiz}
+              currentPlayer={truePlayer}
+            />
+    );
+    expect(wrapperContinue).toMatchSnapshot();
+  });
+
+  it("should invoke the resetQuiz method when button is clicked", () => {
+    const truePlayer = true;
+    let wrapperContinue = shallow(
+      <Footer resetQuiz={resetQuiz}
+              currentPlayer={truePlayer}
+            />
+    );
+    wrapperContinue.find("button").simulate("click", { preventDefault: () => {} });
+    expect(resetQuiz).toBeCalled();
+  });
+
 });

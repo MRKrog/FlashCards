@@ -38,3 +38,54 @@ exports[`<WelcomeScreen> should match snapshot when all data is passed correctly
   </article>
 </section>
 `;
+
+exports[`<WelcomeScreen> should match the continue snapshot when localStorage equals true 1`] = `
+<section
+  className="WelcomeScreen"
+>
+  <article
+    className="welcome-background"
+  >
+    <div
+      className="welcome-content"
+    >
+      <span
+        className="welcome-subHeader"
+      >
+        Welcome Back
+      </span>
+      <h2>
+        Take A Moment To Relax
+      </h2>
+      <p>
+        When you're ready, press continue, to finish the quiz.
+      </p>
+      <button
+        className="welcome-btn"
+        onClick={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "preventDefault": [Function],
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "isThrow": false,
+                "value": undefined,
+              },
+            ],
+          }
+        }
+      >
+        <i
+          className="fas fa-umbrella-beach"
+        />
+         Continue Quiz
+      </button>
+    </div>
+  </article>
+</section>
+`;

@@ -5,10 +5,6 @@ import { shallow } from "enzyme";
 
 const mockData = MockData.cards;
 
-// jest.mock()
-// let allInventory = mockData.distributor[0].inventory;
-// const mockFunc = jest.fn();
-
 const exampleCard = {
       "id": 101,
       "category": "html",
@@ -23,7 +19,7 @@ const exampleCard = {
 
 describe("<App>", () => {
   let wrapper;
-
+  let allData = MockData.cards;
   beforeEach(() => {
     wrapper = shallow(
       <App />
@@ -35,8 +31,7 @@ describe("<App>", () => {
       allCards: mockData,
       correctCards: [],
       currCardIndex: 0,
-      localStorageExist: false,
-      cardsLeft: 0
+      localStorageExist: false
     })
   });
 
@@ -77,21 +72,74 @@ describe("<App>", () => {
 
   it("should invoke changeCardIndex when the handleChangeCard method is called", () => {
     let currentCard = exampleCard.correctAnswer;
-
     wrapper.instance().changeCardIndex = jest.fn();
     wrapper.instance().handleChangeCard(currentCard);
     expect(wrapper.instance().changeCardIndex).toHaveBeenCalled();
   });
 
   it("should match the snapshot where CardContainer is rendered", () => {
-    const newWrapper = shallow(<App />)
-    newWrapper.instance().startQuiz();
-    expect(newWrapper.state("currentPlayer")).toEqual(true);
+    const cardWrapper = shallow(<App />)
+    cardWrapper.instance().startQuiz();
+    expect(cardWrapper.state("currentPlayer")).toEqual(true);
+    expect(cardWrapper).toMatchSnapshot();
+  });
 
+  it("should match the snapshot where FinalScreen is rendered", () => {
+    const finalWrapper = shallow(<App />)
+    finalWrapper.setState({
+      allCards: mockData,
+      currCardIndex: 30
+    })
+    expect(finalWrapper).toMatchSnapshot();
+  });
 
-    expect(newWrapper).toMatchSnapshot();
+  it("should change its state when resetQuiz is invoked", () => {
+    let dataMock = MockData.cards;
+    wrapper.instance().resetQuiz();
+    expect(wrapper.state()).toEqual({
+      currentPlayer: false,
+      originCards: [],
+      allCards: [],
+      correctCards: [],
+      currCardIndex: 0,
+      localStorageExist: false
+    });
+  });
 
+  it("should update the state of originCards with 30 total cards from allCards and update the that localStorageExist to true", () => {
+    wrapper.instance().getFromLocalStorage();
+    expect(wrapper.state("originCards")).toHaveLength(30);
+    expect(wrapper.state("localStorageExist")).toEqual(false);
+  });
 
+  it("should remove the number of cards in localStorage which store in correctCards from allCards array when removeCorrectCards is invoked", () => {
+    wrapper.setState({
+      correctCards: [{
+          "id": 102,
+          "category": "html",
+          "question": "How do you insert a comment in HTML?",
+          "correctAnswer": "<!-- A SAMPLE COMMENT -->",
+          "answers": [
+          "<*-- A SAMPLE COMMENT --*>",
+          "<?-- A SAMPLE COMMENT -->",
+          "<!-- A SAMPLE COMMENT -->",
+          "<-- A SAMPLE COMMENT --!>"]
+        },
+        {
+          "id": 103,
+          "category": "html",
+          "question": "How do you insert a copyright symbol on a browser page?",
+          "correctAnswer": "&copy;",
+          "answers": [
+          "&copy;",
+          "&copyRight;",
+          "&copy!",
+          "&copySymbol;"]
+      }]
+    })
+    expect(wrapper.state("allCards")).toHaveLength(30);
+    wrapper.instance().removeCorrectCards();
+    expect(wrapper.state("allCards")).toHaveLength(28);
   });
 
 });

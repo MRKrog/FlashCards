@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FinalScreen> should match snapshot when all data is passed correctly 1`] = `
+<section
+  className="WelcomeScreen"
+>
+  <article
+    className="welcome-background"
+  >
+    <div
+      className="welcome-content"
+    >
+      <span
+        className="welcome-subHeader"
+      >
+        Good Job
+      </span>
+      <h2>
+        Here are the results of your quiz
+      </h2>
+      <p>
+        Correct Cards: 
+        <span>
+          /30
+        </span>
+      </p>
+      <button
+        className="welcome-btn"
+        onClick={[MockFunction]}
+      >
+        <i
+          className="fas fa-umbrella-beach"
+        />
+         Try Again
+      </button>
+    </div>
+  </article>
+</section>
+`;

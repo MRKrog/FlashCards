@@ -1,10 +1,9 @@
 import React from "react";
 import WelcomeScreen from "../WelcomeScreen";
-import App from "../App";
 import { shallow } from "enzyme";
 
 const startQuiz = jest.fn();
-const localStorageExist = App.localStorageExist;
+const localStorageExist = false;
 
 describe("<WelcomeScreen>", () => {
   let wrapper;
@@ -21,5 +20,19 @@ describe("<WelcomeScreen>", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it("should invoke the startQuiz method when button is clicked", () => {
+    wrapper.find("button").simulate("click", { preventDefault: () => {} });
+    expect(startQuiz).toBeCalled();
+  });
+
+  it("should match the continue snapshot when localStorage equals true", () => {
+    const localStorageExist = true;
+    let wrapperContinue = shallow(
+      <WelcomeScreen localStorageExist={localStorageExist}
+                     startQuiz={startQuiz}
+                    />
+    );
+    expect(wrapperContinue).toMatchSnapshot();
+  });
 
 });

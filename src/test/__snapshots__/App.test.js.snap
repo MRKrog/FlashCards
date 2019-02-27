@@ -32,12 +32,35 @@ exports[`<App> should match the snapshot where CardContainer is rendered 1`] = `
   <main
     className="main-content"
   >
-    <CardContainer
-      onChangeCard={[Function]}
+    <FinalScreen
+      correctCards={Array []}
+      finalBtn={[Function]}
     />
   </main>
   <Footer
     currentPlayer={true}
+    resetQuiz={[Function]}
+  />
+</div>
+`;
+
+exports[`<App> should match the snapshot where FinalScreen is rendered 1`] = `
+<div
+  className="App"
+>
+  <Header
+    correctCards={Array []}
+  />
+  <main
+    className="main-content"
+  >
+    <FinalScreen
+      correctCards={Array []}
+      finalBtn={[Function]}
+    />
+  </main>
+  <Footer
+    currentPlayer={false}
     resetQuiz={[Function]}
   />
 </div>

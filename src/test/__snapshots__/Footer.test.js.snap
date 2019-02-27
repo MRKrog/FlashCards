@@ -9,3 +9,19 @@ exports[`Footer should match snapshot when all data is passed correctly 1`] = `
   </p>
 </footer>
 `;
+
+exports[`Footer should match snapshot when props currentPlayer is equal to true and show the reset game btn 1`] = `
+<footer
+  className="App-footer"
+>
+  <div
+    className="BtnAnswer"
+  >
+    <button
+      onClick={[MockFunction]}
+    >
+      Reset Game
+    </button>
+  </div>
+</footer>
+`;
